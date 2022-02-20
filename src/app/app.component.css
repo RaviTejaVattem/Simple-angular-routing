@@ -1,0 +1,7 @@
+p {
+  font-family: Lato;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+}

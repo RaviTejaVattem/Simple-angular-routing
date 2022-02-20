@@ -1,0 +1,22 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<div class="nav-bar">
+  <a routerLink="/child/1">Child</a>
+  <a routerLink="/">Home</a>
+  <a [routerLink]="[{ outlets: { sidebar: ['component-aux'] } }]">
+    Component Aux
+  </a>
+</div>
+<nav>
+  <router-outlet></router-outlet>
+  <router-outlet name="sidebar"></router-outlet>
+</nav>
+
+<ul class="" *ngFor="let val of data | async; let i = index">
+  <li [routerLink]="['/child', val.id]" (click)="rowClick(val.userId)">
+    {{ val.title }} - {{ val.id }}
+    <br />
+    {{ val.body }}
+  </li>
+</ul>
